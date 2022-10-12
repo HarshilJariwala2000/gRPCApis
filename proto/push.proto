@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package pushapi;
+
+service PushService {
+  rpc Push (PushRequest) returns (PushResponse) {}
+}
+
+// Register
+
+message PushRequest {
+    repeated PushObject arr = 1;
+}
+
+message PushObject {
+  string name = 1;
+}
+
+message PushResponse{
+    int32 status = 1;
+    string error = 2;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package pullapi;
+
+service PullService {
+  rpc Pull (PullRequest) returns (PullResponse) {}
+}
+
+// Register
+
+message PullRequest {
+  
+}
+
+message PullObject {
+  string _id = 1;
+  string name = 2;
+}
+
+message PullResponse{
+    repeated PullObject arr = 1;
+}
